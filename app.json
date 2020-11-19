@@ -3,12 +3,12 @@
     "description": "This is a sample application for the LINE Messaging API",
     "keywords": ["chatbot", "line", "python"],
     "env": {
-        "LINE_BOT_CHANNEL_TOKEN": {
-            "description": "LINE bot Channel access token from the Channel Console",
+        "CHANNEL_ACCESS_TOKEN": {
+            "description": "LINE bot Channel access token",
             "required":  true
         },
-        "LINE_BOT_CHANNEL_SECRET": {
-            "description": "LINE bot Channel secret from the Channel Console",
+        "CHANNEL_SECRET": {
+            "description": "LINE bot Channel secret",
             "required":  true
         }
     }
