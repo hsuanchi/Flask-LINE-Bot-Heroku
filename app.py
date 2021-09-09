@@ -38,5 +38,8 @@ def handle_message(event):
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")+" ，貓貓!"
     line_bot_api.reply_message(event.reply_token, reply)
+<<<<<<< HEAD
     if get_message == "大貓貓":
-        line_bot_api.reply_message(event.reply_token, "你才大貓貓")
+        line_bot_api.reply_message(event.reply_token, "你才大貓貓！")
+=======
+>>>>>>> 504bf3c5c68c2c411e2747183be10dbeba14c249
