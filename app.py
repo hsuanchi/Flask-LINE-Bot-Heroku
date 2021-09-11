@@ -40,5 +40,3 @@ def handle_message(event):
     line_bot_api.reply_message(event.reply_token, reply)
 if get_message == "大貓貓":
     line_bot_api.reply_message(event.reply_token, "你才大貓貓！")
-
-
