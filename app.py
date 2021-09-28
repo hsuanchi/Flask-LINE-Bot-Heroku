@@ -36,13 +36,9 @@ def handle_message(event):
     get_message = event.message.text
 
     # Send To Line
-    reply = TextSendMessage(text=f"{get_message}")+" ，貓貓!"
+    reply = TextSendMessage(text=f"{get_message}")
     line_bot_api.reply_message(event.reply_token, reply)
-if get_message == "大貓貓":
-<<<<<<< HEAD
-    line_bot_api.reply_message(event.reply_token, "你才大貓貓！")
+if get_message == "壞貓貓":
+    line_bot_api.reply_message(event.reply_token, "你才壞貓貓！")
 
 #環境變數DJANGO_SETTINGS_MODULE
-=======
-    line_bot_api.reply_message(event.reply_token, "你才大貓貓！")
->>>>>>> a063a21eaabcbd87130b1236551a77b31b85c91d
