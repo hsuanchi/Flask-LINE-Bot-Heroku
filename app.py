@@ -31,14 +31,29 @@ def callback():
         return "OK"
 
 
+import json
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     get_message = event.message.text
 
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")
+    badCat = TextSendMessage(text="你才壞貓貓")
+
     line_bot_api.reply_message(event.reply_token, reply)
-if get_message == "壞貓貓":
-    line_bot_api.reply_message(event.reply_token, "你才壞貓貓！")
+    if get_message == "壞貓貓":
+        line_bot_api.reply_message(event.reply_token, badCat)
+    elif get_message == "上架":
+        updateCommodity()
+
+def updateCommodity():
+    update = {}
+    reply01 = TextSendMessage(text="請輸入商品名稱")
+    line_bot_api.reply_message(event.reply_token, reply01)
+    
+
+
+
 
 #環境變數DJANGO_SETTINGS_MODULE
