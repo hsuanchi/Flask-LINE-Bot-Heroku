@@ -1,8 +1,15 @@
 import os
 from datetime import datetime
-
+from typing import Text
+import psycopg2
 from flask import Flask, abort, request
 
+#連接資料庫
+#conn = psycopg2.connect(database = 'postgres',host = 'localhost',port = '5432',user = 'Tim',password = 'Tim910111')
+#print('Connectecd')
+#cursor = conn.cursor()
+
+#連linebot
 # https://github.com/line/line-bot-sdk-python
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -31,28 +38,30 @@ def callback():
         return "OK"
 
 
-import json
+def text_reply(content, event):
+    reply = TextSendMessage(text=content)
+    line_bot_api.reply_message(event.reply_token, reply)
+
+#資料庫函數
+#def writeInfo():
+    #cursor.execute('CREATE TABLE inventory(id serial PRIMARY KEY,name VARCHAR(50),quantity INTEGER);')
+
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     get_message = event.message.text
 
-    # Send To Line
-    reply = TextSendMessage(text=f"{get_message}")
-    badCat = TextSendMessage(text="你才壞貓貓")
-
-    line_bot_api.reply_message(event.reply_token, reply)
     if get_message == "壞貓貓":
-        line_bot_api.reply_message(event.reply_token, badCat)
-    elif get_message == "上架":
-        updateCommodity()
+        badcat = "你才壞貓貓"
+        text_reply(badcat,event)
+    elif get_message == "填入資料":
+        continue
+    else:
+        confuse = "我聽不懂你在說什麼"
+        text_reply(confuse,event)
+        
 
-def updateCommodity():
-    update = {}
-    reply01 = TextSendMessage(text="請輸入商品名稱")
-    line_bot_api.reply_message(event.reply_token, reply01)
     
-
 
 
 
