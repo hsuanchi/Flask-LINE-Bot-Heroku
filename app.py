@@ -42,6 +42,7 @@ def handle_message(event):
     badCat = TextSendMessage(text="你才壞貓貓")
 
     line_bot_api.reply_message(event.reply_token, reply)
+<<<<<<< HEAD
     if get_message == "壞貓貓":
         line_bot_api.reply_message(event.reply_token, badCat)
     elif get_message == "上架":
@@ -54,6 +55,8 @@ def updateCommodity():
     
 
 
+=======
+>>>>>>> ab51a9b33604b0e3e2de442ed729fed46d4a6bd1
 
 
 #環境變數DJANGO_SETTINGS_MODULE
