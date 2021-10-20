@@ -51,16 +51,12 @@ def text_reply(content, event):
 def handle_message(event):
     get_message = event.message.text
 
-<<<<<<< HEAD
-=======
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")
     badCat = TextSendMessage(text="你才壞貓貓")
 
     line_bot_api.reply_message(event.reply_token, reply)
 
-
->>>>>>> 2770949f1d06209b2b29f3a49713d93ef55a3ebf
     if get_message == "壞貓貓":
         badcat = "你才壞貓貓"
         text_reply(badcat,event)
@@ -73,9 +69,4 @@ def handle_message(event):
 
     
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 2770949f1d06209b2b29f3a49713d93ef55a3ebf
-
-#環境變數DJANGO_SETTINGS_MODULE
