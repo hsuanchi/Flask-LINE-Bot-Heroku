@@ -50,12 +50,6 @@ def text_reply(content, event):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     get_message = event.message.text
-    # Send To Line
-    reply = TextSendMessage(text=f"{get_message}")
-    badCat = TextSendMessage(text="你才壞貓貓")
-
-    line_bot_api.reply_message(event.reply_token, reply)
-
     if get_message == "壞貓貓":
         badcat = "你才壞貓貓"
         text_reply(badcat,event)
