@@ -1,13 +1,13 @@
 import os
 from datetime import datetime
 from typing import Text
-#import psycopg2
+import psycopg2
 from flask import Flask, abort, request
 
 #連接資料庫
-#conn = psycopg2.connect(database = 'postgres',host = 'localhost',port = '5432',user = 'Tim',password = 'Tim910111')
+conn = psycopg2.connect(database = 'postgres',host = 'localhost',port = '5432',user = 'Tim',password = 'Tim910111')
 #print('Connectecd')
-#cursor = conn.cursor()
+cursor = conn.cursor()
 
 #連linebot
 # https://github.com/line/line-bot-sdk-python
