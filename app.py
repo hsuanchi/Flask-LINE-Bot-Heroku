@@ -54,15 +54,9 @@ def handle_message(event):
     if get_message == "壞貓貓":
         badcat = "你才壞貓貓"
         text_reply(badcat,event)
-    elif get_message == "填入資料":
-        continue
     else:
         confuse = "我聽不懂你在說什麼"
         text_reply(confuse,event)
         
-
-    
-
-
 
 #環境變數DJANGO_SETTINGS_MODULE
