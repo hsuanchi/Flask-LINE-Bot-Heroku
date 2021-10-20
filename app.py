@@ -5,9 +5,9 @@ import psycopg2
 from flask import Flask, abort, request
 
 #連接資料庫
-#conn = psycopg2.connect(database = 'postgres',host = 'localhost',port = '5432',user = 'Tim',password = 'Tim910111')
+conn = psycopg2.connect(database = 'dc12u005giu04i',host = 'ec2-44-195-240-222.compute-1.amazonaws.com',port = '5432',user = 'ktptiqlmwmjwha',password = '35704ce12d9c08c10280138457c662c741af5dc5391f0a505a61ea41ec7bd0a0')
 #print('Connectecd')
-#cursor = conn.cursor()
+cursor = conn.cursor()
 
 #連linebot
 # https://github.com/line/line-bot-sdk-python
@@ -43,8 +43,14 @@ def text_reply(content, event):
     line_bot_api.reply_message(event.reply_token, reply)
 
 #資料庫函數
-#def writeInfo():
-    #cursor.execute('CREATE TABLE inventory(id serial PRIMARY KEY,name VARCHAR(50),quantity INTEGER);')
+def writeInfo(thing,price):
+    try:
+        cursor.execute('CREATE TABLE table1(id serial PRIMARY KEY,name VARCHAR(50),quantity INTEGER);')
+    except:
+        pass
+    cursor.execute("INSERT INTO inventory(name,quantity)VALUES(%s,%s);",(thing,price))
+    
+
 
 
 @handler.add(MessageEvent, message=TextMessage)
@@ -54,6 +60,10 @@ def handle_message(event):
     if get_message == "壞貓貓":
         badcat = "你才壞貓貓"
         text_reply(badcat,event)
+    elif get_message == "壞貓貓記帳":
+        thing = 'apple'
+        price = '200'
+        writeInfo(thing,price)
     else:
         confuse = "我聽不懂你在說什麼"
         text_reply(confuse,event)
