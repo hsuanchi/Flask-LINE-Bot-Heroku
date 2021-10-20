@@ -56,7 +56,6 @@ def writeInfo(thing,price):
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     get_message = event.message.text
-
     if get_message == "壞貓貓":
         badcat = "你才壞貓貓"
         text_reply(badcat,event)
