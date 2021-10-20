@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 from typing import Text
-import psycopg2
+#import psycopg2
 from flask import Flask, abort, request
 
 #連接資料庫
