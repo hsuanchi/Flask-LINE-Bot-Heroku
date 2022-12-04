@@ -37,4 +37,13 @@
 
 <img src="https://github.com/hsuanchi/Flask-LINE-Bot-Heroku/blob/main/img/custom%20readme-flask-line-bot.png" width="800px" height="auto">
 
+
+### 五. 其他相關 Line Bot 教學文章
+1. [ [Flask – LINE Bot 教學] 事前準備篇](https://www.maxlist.xyz/2020/11/16/flask-line-bot-pre-set/)
+2. [ [Flask – LINE Bot 教學] Heroku 一鍵自動部署](https://www.maxlist.xyz/2020/11/30/flask-line-bot-deploy-heroku/)
+3. [ [Flask – LINE Bot 教學] GCP 部署 (Docker+Flask+Nginx)](https://www.maxlist.xyz/2020/12/01/flask-line-bot-docker-flask-nginx-gcp/)
+4. [ 淺談 LINE-Bot 中的驗證機制 (HMAC & Bearer Token)](https://www.maxlist.xyz/2020/12/12/line-bot-sdk/)
+5. [ [Side Project] LINE Bot 自動化工具 (附 Github 程式碼)](https://github.com/hsuanchi/LINE-Bot-Template)
+
+
 本篇文章同步刊登於 [ [Flask – LINE Bot 教學] Heroku 一鍵自動部署 - Max行銷誌](https://www.maxlist.xyz/2020/11/30/flask-line-bot-deploy-heroku/)，如果有遇到任何問題，歡迎私訊或留言，我會盡快回覆您
